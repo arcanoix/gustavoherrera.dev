@@ -5,22 +5,22 @@ import { ModeToggle } from "./ModeToggle"
 const socials = [
   {
     name: "Github",
-    url: "https://github.com/slydragonn",
+    url: "https://github.com/arcanoix",
     icon: FaGithub,
   },
   {
     name: "DEV",
-    url: "https://dev.to/slydragonn",
+    url: "https://dev.to/arcanoix",
     icon: FaDev,
   },
   {
     name: "Twitter",
-    url: "https://x.com/alejo_log",
+    url: "https://x.com/arcanoix_",
     icon: FaXTwitter,
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/alejolg/",
+    url: "https://www.linkedin.com/in/thavoo/",
     icon: FaLinkedin,
   },
 ]
