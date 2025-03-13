@@ -1,4 +1,5 @@
 ---
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro"
 import Navbar from "@/components/Navbar"
 import SmoothScroll from "@/components/SmoothScroll"
 ---
@@ -11,6 +12,7 @@ import SmoothScroll from "@/components/SmoothScroll"
     <link rel="icon" type="image/svg+xml" href="/fav.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Gustavo's Portfolio</title>
+    <GoogleAnalytics />
   </head>
   <body>
     <SmoothScroll client:only>
