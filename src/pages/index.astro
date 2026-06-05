@@ -3,8 +3,11 @@ import ProjectSection from "@/components/ProjectSection"
 import PostsSection from "@/components/PostsSection"
 import Timeline from "@/components/Timeline"
 import Avatar from "@/components/Avatar"
+import SkillsSection from "@/components/SkillsSection"
 import Layout from "@/layouts/Layout.astro"
 import { HiOutlineArrowDownCircle as DownIcon } from "react-icons/hi2"
+import { FaGithub, FaLinkedin, FaDev } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 import "@/styles/globals.css"
 ---
 
@@ -22,7 +25,6 @@ import "@/styles/globals.css"
 
   if (typeof localStorage !== "undefined") {
     const observer = new MutationObserver(() => {
-      
       const isDark = document.documentElement.classList.contains("dark")
       localStorage.setItem("theme", isDark ? "dark" : "light")
     })
@@ -35,34 +37,148 @@ import "@/styles/globals.css"
 
 <Layout>
   <main class="p-4 text-slate-700 dark:text-slate-400">
-    <section class="flex flex-col w-full h-screen justify-center items-center">
-      <p
-        class="max-w-56 text-center"
-      >
-        Hello, I'm <strong>Gustavo</strong>, a fullstack developer.
-      </p>
-      <DownIcon className="text-2xl animate-bounce mt-10" />
+
+    <!-- Hero -->
+    <section class="flex flex-col w-full h-screen justify-center items-center gap-6">
+      <div class="flex flex-col items-center gap-3 text-center max-w-2xl">
+        <span class="text-xs font-semibold tracking-widest uppercase text-slate-500 dark:text-slate-400">
+          Senior Fullstack Developer
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-slate-800 dark:text-slate-100">
+          Gustavo Herrera
+        </h1>
+        <p class="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-xl">
+          Building robust web applications and scalable APIs for over 15 years. Specialized in
+          Laravel, React, and modern fullstack solutions &mdash; from business automation to SaaS platforms.
+        </p>
+        <p class="text-sm text-slate-400 dark:text-slate-500">Venezuela &middot; Remote</p>
+      </div>
+
+      <div class="flex gap-6 md:gap-10 mt-2 border border-slate-200 dark:border-slate-700 rounded-2xl px-6 md:px-10 py-4">
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">15+</p>
+          <p class="text-xs text-slate-500">Years</p>
+        </div>
+        <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">333+</p>
+          <p class="text-xs text-slate-500">Repos</p>
+        </div>
+        <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">5.0</p>
+          <p class="text-xs text-slate-500">Rating</p>
+        </div>
+        <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">28</p>
+          <p class="text-xs text-slate-500">Reviews</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 justify-center mt-2">
+        <a
+          href="https://www.freelancer.com/u/gustavoherrera84"
+          target="_blank"
+          rel="noreferrer"
+          class="px-5 py-2 rounded-full bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 text-sm font-medium hover:opacity-90 transition-opacity"
+        >
+          Hire me
+        </a>
+        <a
+          href="#projects"
+          class="px-5 py-2 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          View Projects
+        </a>
+      </div>
+
+      <DownIcon className="text-2xl animate-bounce mt-2" />
     </section>
-    <section class="flex flex-col w-full justify-center items-center gap-28">
+
+    <!-- Projects -->
+    <section id="projects" class="flex flex-col w-full justify-center items-center gap-28">
       <h2 class="font-bold">Projects</h2>
       <ProjectSection client:load />
     </section>
-    <section class="flex flex-col w-full justify-center items-center gap-28 mt-56">
+
+    <!-- Skills -->
+    <section id="skills" class="flex flex-col w-full justify-center items-center gap-16 mt-56">
+      <h2 class="font-bold">Skills</h2>
+      <SkillsSection />
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="flex flex-col w-full justify-center items-center gap-28 mt-56">
       <h2 class="font-bold">Experience</h2>
       <Timeline />
     </section>
-    <section class="flex flex-col w-full justify-center items-center gap-28 mt-56">
+
+    <!-- Posts -->
+    <section id="posts" class="flex flex-col w-full justify-center items-center gap-28 mt-56">
       <h2 class="font-bold">Posts</h2>
       <PostsSection client:load />
     </section>
-    <section class="flex flex-col w-full justify-center items-center gap-28 mt-56">
+
+    <!-- About -->
+    <section id="about" class="flex flex-col w-full justify-center items-center gap-16 mt-56">
       <h2 class="font-bold">About me</h2>
-      <div class="flex flex-col items-center gap-4 max-w-[500px]">
-        <Avatar src="https://avatars.githubusercontent.com/u/6331999?v=4" alt="Gustavo Herrera" client:load/>
-        <p class="text-center">My name is <strong>Gustavo Herrera</strong>, I started programming in mid-2005 and I currently specialize in web development.</p>
-        <p class="text-center">I am passionate about technology, learning new things, sharing knowledge and creating open source software.</p>
+      <div class="flex flex-col md:flex-row items-center gap-10 max-w-[700px]">
+        <Avatar src="https://avatars.githubusercontent.com/u/6331999?v=4" alt="Gustavo Herrera" client:load />
+        <div class="flex flex-col gap-4 text-center md:text-left">
+          <p>
+            I'm <strong>Gustavo Herrera</strong>, a Senior Fullstack Developer from Venezuela with
+            over 15 years of experience building web applications and automating business processes.
+          </p>
+          <p>
+            I specialize in backend development with Laravel and scalable REST APIs, integrating complex
+            systems like billing platforms, accounting workflows, and SaaS solutions. On the frontend
+            I work with React, Vue.js, Next.js, and Astro.
+          </p>
+          <p>
+            I'm passionate about open source, sharing knowledge, and building tools that make
+            developers' lives easier. I started programming in 2005 and have never stopped learning.
+          </p>
+        </div>
       </div>
     </section>
+
+    <!-- Contact -->
+    <section id="contact" class="flex flex-col w-full justify-center items-center gap-12 mt-56">
+      <h2 class="font-bold">Contact</h2>
+      <div class="flex flex-col items-center gap-6 max-w-[500px] text-center">
+        <p>Available for freelance projects and full-time remote opportunities. Feel free to reach out.</p>
+        <a
+          href="mailto:gustavoh.2312@gmail.com"
+          class="text-lg font-medium text-slate-800 dark:text-slate-200 hover:underline"
+        >
+          gustavoh.2312@gmail.com
+        </a>
+        <div class="flex gap-6 text-2xl text-slate-700 dark:text-slate-300">
+          <a href="https://github.com/arcanoix" target="_blank" rel="noreferrer" class="hover:scale-110 transition-transform">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/thavoo/" target="_blank" rel="noreferrer" class="hover:scale-110 transition-transform">
+            <FaLinkedin />
+          </a>
+          <a href="https://dev.to/arcanoix" target="_blank" rel="noreferrer" class="hover:scale-110 transition-transform">
+            <FaDev />
+          </a>
+          <a href="https://x.com/arcanoix_" target="_blank" rel="noreferrer" class="hover:scale-110 transition-transform">
+            <FaXTwitter />
+          </a>
+        </div>
+        <a
+          href="https://www.freelancer.com/u/gustavoherrera84"
+          target="_blank"
+          rel="noreferrer"
+          class="text-sm text-slate-500 dark:text-slate-400 hover:underline"
+        >
+          freelancer.com/u/gustavoherrera84
+        </a>
+      </div>
+    </section>
+
   </main>
   <footer>
     <p class="text-center text-sm text-slate-700 dark:text-slate-400 p-4 mt-28">
