@@ -1,10 +1,10 @@
 export const EXPERIENCES = [
   {
-    date: "March 2023 - April 2024",
-    jobTitle: "Technology Assistant",
-    company: "Empresa de Conducciones las Arrieritas SA",
+    date: "March 2021 - Present",
+    jobTitle: "Senior Director of Software Engineering",
+    company: "Tecnofact · Full-time · Remote",
     description:
-      "Improved the agility of monitoring, data analysis, and decision-making by implementing modern solutions with Python, Django, TypeScript, React, and Next.js. Automated internal business processes and integrated tools to streamline operations across departments.",
+      "Led the transition to the CFDI 4.0 standard, ensuring fiscal compliance for 120 clients and reducing validation errors by 85%. Designed a scalable billing system architecture using Kubernetes and cloud computing, enabling 300 transactions per second without downtime. Built and optimized the core electronic billing platform with a microservices architecture using Go, MongoDB, and PostgreSQL, improving system response time by 30%. Managed the full application lifecycle with Docker image creation and Kubernetes orchestration in production environments. Developed and documented robust APIs for third-party service integration. Acted as the technical bridge between SAT regulatory requirements and product implementation.",
   },
   {
     date: "January 2014 - Present",
