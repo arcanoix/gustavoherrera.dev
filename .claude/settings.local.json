@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:www.freelancer.com)",
+      "Bash(npm run *)",
+      "Bash(npx astro *)",
+      "Bash(node_modules\\\\.bin\\\\astro build *)",
+      "Skill(git-commit)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}
