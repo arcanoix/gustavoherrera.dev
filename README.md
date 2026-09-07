@@ -8,7 +8,7 @@
 
 Personal developer portfolio and showcase for **Gustavo Herrera** ([@arcanoix](https://github.com/arcanoix)), Senior Fullstack Developer with 15+ years of experience. Built with Astro, React, TypeScript, and Tailwind CSS for speed, accessibility, and clean component architecture.
 
-![Portfolio Cover](/images/cover.png)
+![Portfolio Cover](public/images/cover.png)
 
 ---
 
@@ -128,6 +128,7 @@ The app will be available at [http://localhost:4321](http://localhost:4321) with
 - LinkedIn: [in/thavoo](https://www.linkedin.com/in/thavoo/)
 - Freelancer: [freelancer.com/u/gustavoherrera84](https://www.freelancer.com/u/gustavoherrera84)
 - X (Twitter): [@arcanoix\_](https://x.com/arcanoix_)
+- WhatsApp: [+58 412-1367894](https://wa.me/584121367894)
 - Email: [gustavoh.2312@gmail.com](mailto:gustavoh.2312@gmail.com)
 
 ---

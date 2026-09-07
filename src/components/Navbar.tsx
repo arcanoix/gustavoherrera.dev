@@ -1,4 +1,4 @@
-import { FaDev, FaGithub, FaLinkedin } from "react-icons/fa"
+import { FaDev, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { ModeToggle } from "./ModeToggle"
 
@@ -22,6 +22,11 @@ const socials = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/thavoo/",
     icon: FaLinkedin,
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/+584121367894",
+    icon: FaWhatsapp,
   },
 ]
 
