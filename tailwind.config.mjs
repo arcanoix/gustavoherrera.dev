@@ -13,10 +13,15 @@ export default {
           "0%": { opacity: "1", transform: "translateY(-20px)" },
           "100%": { opacity: "0", transform: "translateY(0)" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
       },
       animation: {
         "fade-in-up": "fadeInUp 1s ease-out forwards",
         "fade-out-down": "fadeOutDown 1s ease-out",
+        shimmer: "shimmer 2s linear infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
