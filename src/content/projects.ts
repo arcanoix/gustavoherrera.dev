@@ -33,4 +33,17 @@ export const PROJECTS = [
       },
     ],
   },
+  {
+    title: "FogonIA SaaS Restaurant Management",
+    description: " FogonIA is a SaaS restaurant management system that helps restaurants manage their operations more efficiently.",
+    image: "/fogonia.png",
+    tags: ["JavaScript", "Next.js"],
+    links: [
+      {
+        name: "Preview",
+        url: "https://www.contar.online/",
+        icon: PiLinkSimpleBold,
+      },
+    ],
+  },
 ]
