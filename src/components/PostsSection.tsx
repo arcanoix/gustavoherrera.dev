@@ -1,10 +1,17 @@
 import PostCard from "./PostCard"
 import { POSTS } from "@/content/posts"
+import type { Lang } from "@/i18n/ui"
 
-const PostsSection = () => {
+interface PostsSectionProps {
+  lang: Lang
+}
+
+const PostsSection = ({ lang }: PostsSectionProps) => {
+  const posts = POSTS[lang]
+
   return (
     <div className="flex flex-col md:w-[700px] lg:w-[800px] w-full justify-center items-center gap-7">
-      {POSTS.map(({ title, description, date, tags, url }) => (
+      {posts.map(({ title, description, date, tags, url }) => (
         <PostCard
           key={title}
           title={title}
@@ -12,6 +19,7 @@ const PostsSection = () => {
           tags={tags}
           date={date}
           url={url}
+          lang={lang}
         />
       ))}
     </div>

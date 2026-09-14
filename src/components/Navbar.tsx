@@ -1,6 +1,9 @@
 import { FaDev, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
+import { Languages } from "lucide-react"
 import { ModeToggle } from "./ModeToggle"
+import { useTranslations } from "@/i18n/utils"
+import type { Lang } from "@/i18n/ui"
 
 const socials = [
   {
@@ -30,7 +33,15 @@ const socials = [
   },
 ]
 
-const Navbar = () => {
+interface NavbarProps {
+  lang: Lang
+}
+
+const Navbar = ({ lang }: NavbarProps) => {
+  const t = useTranslations(lang)
+  const altLangHref = lang === "en" ? "/es/" : "/"
+  const altLangLabel = lang === "en" ? "ES" : "EN"
+
   return (
     <nav className="z-40 fixed top-5 left-0 right-0 my-0 mx-auto max-w-max px-5 py-2 border border-slate-200 dark:border-slate-700 rounded-full bg-slate-50/30 dark:bg-slate-900/30 backdrop-blur-md">
       <ul className="flex items-center justify-center gap-6 text-slate-700 dark:text-slate-300 text-xl">
@@ -52,6 +63,16 @@ const Navbar = () => {
             </a>
           </li>
         ))}
+        <li>
+          <a
+            href={altLangHref}
+            aria-label={t("nav.switchTo")}
+            className="flex items-center gap-1 text-sm font-medium text-slate-700 dark:text-slate-300 hover:scale-90 duration-150"
+          >
+            <Languages className="w-4 h-4" />
+            {altLangLabel}
+          </a>
+        </li>
         <li>
           <ModeToggle />
         </li>

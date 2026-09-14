@@ -1,9 +1,16 @@
 import { SKILLS } from "@/content/skills"
+import type { Lang } from "@/i18n/ui"
 
-const SkillsSection = () => {
+interface SkillsSectionProps {
+  lang: Lang
+}
+
+const SkillsSection = ({ lang }: SkillsSectionProps) => {
+  const skills = SKILLS[lang]
+
   return (
     <div className="flex flex-col gap-8 w-full max-w-[800px]">
-      {SKILLS.map((group, i) => (
+      {skills.map((group, i) => (
         <div key={i} className="flex flex-col gap-3">
           <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             {group.category}

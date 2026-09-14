@@ -9,6 +9,8 @@ import {
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
 import { GoLinkExternal } from "react-icons/go"
+import { useTranslations } from "@/i18n/utils"
+import type { Lang } from "@/i18n/ui"
 
 interface PostCardProps {
   title: string
@@ -16,9 +18,11 @@ interface PostCardProps {
   date: string
   tags: string[]
   url: string
+  lang: Lang
 }
 
-const PostCard = ({ title, description, date, tags, url }: PostCardProps) => {
+const PostCard = ({ title, description, date, tags, url, lang }: PostCardProps) => {
+  const t = useTranslations(lang)
   return (
     <Card className="w-full">
       <CardHeader>
@@ -57,7 +61,7 @@ const PostCard = ({ title, description, date, tags, url }: PostCardProps) => {
           </div>
           <a href={url} target="_blank" rel="noreferrer">
             <Button variant="secondary">
-              Read More <GoLinkExternal />
+              {t("post.readMore")} <GoLinkExternal />
             </Button>
           </a>
         </div>

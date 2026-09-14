@@ -1,10 +1,17 @@
 import { PROJECTS } from "@/content/projects"
+import type { Lang } from "@/i18n/ui"
 import ProjectCard from "./ProjectCard"
 
-const ProjectSection = () => {
+interface ProjectSectionProps {
+  lang: Lang
+}
+
+const ProjectSection = ({ lang }: ProjectSectionProps) => {
+  const projects = PROJECTS[lang]
+
   return (
     <div className="flex flex-col justify-center items-center gap-14">
-      {PROJECTS.map(
+      {projects.map(
         ({
           image,
           imageWidth,

@@ -1,26 +1,38 @@
 ---
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro"
-import Navbar from "@/components/Navbar"
 import SmoothScroll from "@/components/SmoothScroll"
+import { useTranslations } from "@/i18n/utils"
+import { defaultLang, type Lang } from "@/i18n/ui"
+
+interface Props {
+  lang?: Lang
+}
+
+const { lang = defaultLang } = Astro.props
+const t = useTranslations(lang)
+const base = Astro.site ?? Astro.url.origin
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/fav.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Gustavo Herrera | Senior Fullstack Developer</title>
-    <meta name="description" content="Senior Fullstack Developer with 15+ years building web applications and scalable APIs. Specialized in Laravel, React, and business automation. Available for remote work." />
+    <meta name="description" content={t("meta.description")} />
     <meta property="og:title" content="Gustavo Herrera | Senior Fullstack Developer" />
-    <meta property="og:description" content="Senior Fullstack Developer with 15+ years building web applications. Specialized in Laravel, React, and scalable REST APIs." />
+    <meta property="og:description" content={t("meta.ogDescription")} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@arcanoix_" />
+    <link rel="alternate" hreflang="en" href={new URL("/", base)} />
+    <link rel="alternate" hreflang="es" href={new URL("/es/", base)} />
+    <link rel="alternate" hreflang="x-default" href={new URL("/", base)} />
     <GoogleAnalytics />
   </head>
   <body>
-    <SmoothScroll client:only>
+    <SmoothScroll lang={lang} client:only>
       <slot />
     </SmoothScroll>
   </body>
