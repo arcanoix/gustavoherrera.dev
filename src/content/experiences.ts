@@ -1,11 +1,11 @@
 export const EXPERIENCES = {
   en: [
     {
-      date: "March 2021 - Present",
-      jobTitle: "Senior Director of Software Engineering",
+      date: "September 2021 - Present",
+      jobTitle: "AI Engineer",
       company: "Tecnofact · Full-time · Remote",
       description:
-        "Led the transition to the CFDI 4.0 standard, ensuring fiscal compliance for 120 clients and reducing validation errors by 85%. Designed a scalable billing system architecture using Kubernetes and cloud computing, enabling 300 transactions per second without downtime. Built and optimized the core electronic billing platform with a microservices architecture using Go, MongoDB, and PostgreSQL, improving system response time by 30%. Managed the full application lifecycle with Docker image creation and Kubernetes orchestration in production environments. Developed and documented robust APIs for third-party service integration. Acted as the technical bridge between SAT regulatory requirements and product implementation.",
+        "Promoted to AI Engineer, building AI-driven solutions for Tecnofact's Mexican electronic billing (CFDI 4.0) business model using Python, RAG architectures, AI agents, and LLM APIs (OpenAI, Anthropic, DeepSeek). Previously led the transition to the CFDI 4.0 standard, ensuring fiscal compliance for 120 clients and reducing validation errors by 85%. Designed a scalable billing system architecture using Kubernetes and cloud computing (300 TPS without downtime), and built core microservices with Go, MongoDB, and PostgreSQL, improving response time by 30%.",
     },
     {
       date: "January 2014 - Present",
@@ -17,11 +17,11 @@ export const EXPERIENCES = {
   ],
   es: [
     {
-      date: "Marzo 2021 - Presente",
-      jobTitle: "Director Senior de Ingeniería de Software",
+      date: "Septiembre 2021 - Presente",
+      jobTitle: "AI Engineer",
       company: "Tecnofact · Tiempo completo · Remoto",
       description:
-        "Lideré la transición al estándar CFDI 4.0, garantizando el cumplimiento fiscal de 120 clientes y reduciendo los errores de validación en un 85%. Diseñé una arquitectura escalable de sistema de facturación usando Kubernetes y computación en la nube, permitiendo 300 transacciones por segundo sin tiempo de inactividad. Construí y optimicé la plataforma central de facturación electrónica con una arquitectura de microservicios usando Go, MongoDB y PostgreSQL, mejorando el tiempo de respuesta del sistema en un 30%. Gestioné el ciclo de vida completo de las aplicaciones con creación de imágenes Docker y orquestación de Kubernetes en entornos de producción. Desarrollé y documenté APIs robustas para la integración con servicios de terceros. Actué como puente técnico entre los requisitos regulatorios del SAT y la implementación del producto.",
+        "Promovido a AI Engineer, desarrollando soluciones basadas en IA para el modelo de negocio de facturación electrónica en México (CFDI 4.0) de Tecnofact mediante Python, arquitecturas RAG, agentes de IA e integración de APIs de LLMs (OpenAI, Anthropic, DeepSeek). Anteriormente lideré la transición al estándar CFDI 4.0, garantizando el cumplimiento fiscal de 120 clientes y reduciendo los errores de validación en un 85%. Diseñé una arquitectura escalable en Kubernetes y nube (300 TPS sin tiempo de inactividad) y construí microservicios con Go, MongoDB y PostgreSQL, mejorando el tiempo de respuesta en un 30%.",
     },
     {
       date: "Enero 2014 - Presente",

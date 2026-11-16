@@ -8,14 +8,14 @@ export const defaultLang = "en"
 export const ui = {
   en: {
     "meta.description":
-      "Senior Fullstack Developer with 15+ years building web applications and scalable APIs. Specialized in Laravel, React, and business automation. Available for remote work.",
+      "AI Engineer & Senior Fullstack Developer with 15+ years building scalable web applications, APIs, and AI-powered solutions with Python, RAG, and AI agents. Available for remote work.",
     "meta.ogDescription":
-      "Senior Fullstack Developer with 15+ years building web applications. Specialized in Laravel, React, and scalable REST APIs.",
+      "AI Engineer & Senior Fullstack Developer with 15+ years building scalable systems, RAG architectures, AI agents, and REST APIs.",
     "nav.switchTo": "Switch to Spanish",
     loading: "Loading...",
-    "hero.role": "Senior Fullstack Developer",
+    "hero.role": "AI Engineer",
     "hero.description":
-      "Building robust web applications and scalable APIs for over 15 years. Specialized in Laravel, React, and modern fullstack solutions — from business automation to SaaS platforms.",
+      "AI Engineer & Senior Fullstack Developer with 15+ years of experience. Building RAG systems, AI agents, and scalable platforms with Python, LLMs (OpenAI, Anthropic, DeepSeek), Laravel, and React.",
     "hero.location": "Venezuela · Remote",
     "hero.hireMe": "Hire me",
     "hero.viewProjects": "View Projects",
@@ -31,9 +31,9 @@ export const ui = {
     "section.contact": "Contact",
     "about.p1Start": "I'm",
     "about.p1End":
-      ", a Senior Fullstack Developer from Venezuela with over 15 years of experience building web applications and automating business processes.",
+      ", an AI Engineer and Senior Fullstack Developer from Venezuela with over 15 years of experience building software systems and automating business processes.",
     "about.p2":
-      "I specialize in backend development with Laravel and scalable REST APIs, integrating complex systems like billing platforms, accounting workflows, and SaaS solutions. On the frontend I work with React, Vue.js, Next.js, and Astro.",
+      "Currently focused on AI engineering with Python—designing RAG architectures, building AI agents, and integrating OpenAI, Anthropic, and DeepSeek APIs for electronic billing (CFDI 4.0) workflows. I also have deep experience in backend development with Laravel, Go, and scalable REST APIs, as well as React, Vue.js, Next.js, and Astro on the frontend.",
     "about.p3":
       "I'm passionate about open source, sharing knowledge, and building tools that make developers' lives easier. I started programming in 2005 and have never stopped learning.",
     "contact.description":
@@ -43,14 +43,14 @@ export const ui = {
   },
   es: {
     "meta.description":
-      "Desarrollador Fullstack Senior con más de 15 años construyendo aplicaciones web y APIs escalables. Especializado en Laravel, React y automatización de negocios. Disponible para trabajo remoto.",
+      "AI Engineer y Desarrollador Fullstack Senior con más de 15 años construyendo aplicaciones web escalables, APIs y soluciones con IA usando Python, RAG y agentes de IA. Disponible para trabajo remoto.",
     "meta.ogDescription":
-      "Desarrollador Fullstack Senior con más de 15 años construyendo aplicaciones web. Especializado en Laravel, React y APIs REST escalables.",
+      "AI Engineer y Desarrollador Fullstack Senior con más de 15 años construyendo sistemas escalables, arquitecturas RAG, agentes de IA y APIs REST.",
     "nav.switchTo": "Cambiar a inglés",
     loading: "Cargando...",
-    "hero.role": "Desarrollador Fullstack Senior",
+    "hero.role": "AI Engineer",
     "hero.description":
-      "Construyendo aplicaciones web robustas y APIs escalables por más de 15 años. Especializado en Laravel, React y soluciones fullstack modernas — desde automatización de negocios hasta plataformas SaaS.",
+      "AI Engineer y Desarrollador Fullstack Senior con más de 15 años de experiencia. Construyendo sistemas RAG, agentes de IA y plataformas escalables con Python, LLMs (OpenAI, Anthropic, DeepSeek), Laravel y React.",
     "hero.location": "Venezuela · Remoto",
     "hero.hireMe": "Contrátame",
     "hero.viewProjects": "Ver proyectos",
@@ -66,9 +66,9 @@ export const ui = {
     "section.contact": "Contacto",
     "about.p1Start": "Soy",
     "about.p1End":
-      ", un Desarrollador Fullstack Senior de Venezuela con más de 15 años de experiencia construyendo aplicaciones web y automatizando procesos de negocio.",
+      ", AI Engineer y Desarrollador Fullstack Senior de Venezuela con más de 15 años de experiencia construyendo sistemas de software y automatizando procesos de negocio.",
     "about.p2":
-      "Me especializo en desarrollo backend con Laravel y APIs REST escalables, integrando sistemas complejos como plataformas de facturación, flujos de contabilidad y soluciones SaaS. En el frontend trabajo con React, Vue.js, Next.js y Astro.",
+      "Actualmente enfocado en ingeniería de IA con Python: diseñando arquitecturas RAG, construyendo agentes de IA e integrando APIs de OpenAI, Anthropic y DeepSeek para flujos de facturación electrónica (CFDI 4.0). También cuento con amplia experiencia en backend con Laravel, Go y APIs REST escalables, y en frontend con React, Vue.js, Next.js y Astro.",
     "about.p3":
       "Me apasiona el código abierto, compartir conocimiento y construir herramientas que faciliten la vida de los desarrolladores. Empecé a programar en 2005 y nunca he dejado de aprender.",
     "contact.description":

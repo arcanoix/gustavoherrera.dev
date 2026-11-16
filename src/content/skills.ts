@@ -1,6 +1,10 @@
 export const SKILLS = {
   en: [
     {
+      category: "AI & LLMs",
+      items: ["Python", "OpenAI API", "Anthropic", "DeepSeek", "RAG", "AI Agents", "LLMs"],
+    },
+    {
       category: "Backend",
       items: ["Laravel", "PHP 8", "Node.js", "Python", "Django", "Spring Boot", "Ruby", "Go"],
     },
@@ -22,6 +26,10 @@ export const SKILLS = {
     },
   ],
   es: [
+    {
+      category: "IA y LLMs",
+      items: ["Python", "OpenAI API", "Anthropic", "DeepSeek", "RAG", "Agentes de IA", "LLMs"],
+    },
     {
       category: "Backend",
       items: ["Laravel", "PHP 8", "Node.js", "Python", "Django", "Spring Boot", "Ruby", "Go"],
