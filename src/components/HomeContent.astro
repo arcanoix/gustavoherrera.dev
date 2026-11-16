@@ -4,7 +4,6 @@ import PostsSection from "@/components/PostsSection"
 import Timeline from "@/components/Timeline"
 import Avatar from "@/components/Avatar"
 import SkillsSection from "@/components/SkillsSection"
-import { HiOutlineArrowDownCircle as DownIcon } from "react-icons/hi2"
 import { FaGithub, FaLinkedin, FaDev, FaWhatsapp } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { useTranslations } from "@/i18n/utils"
@@ -18,143 +17,170 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 ---
 
-<main class="p-4 text-slate-700 dark:text-slate-400">
+<main class="text-slate-800 dark:text-slate-200">
   <!-- Hero -->
-  <section
-    class="flex flex-col w-full h-screen justify-center items-center gap-6"
-  >
-    <div class="flex flex-col items-center gap-3 text-center max-w-2xl">
-      <span
-        class="text-xs font-semibold tracking-widest uppercase text-slate-500 dark:text-slate-400"
-      >
-        {t("hero.role")}
-      </span>
-      <h1
-        class="text-4xl md:text-6xl font-bold text-slate-800 dark:text-slate-100"
-      >
-        Gustavo Herrera
-      </h1>
-      <p
-        class="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-xl"
-      >
-        {t("hero.description")}
-      </p>
-      <p class="text-sm text-slate-400 dark:text-slate-500">
-        {t("hero.location")}
-      </p>
-    </div>
-
+  <section class="relative">
     <div
-      class="flex gap-6 md:gap-10 mt-2 border border-slate-200 dark:border-slate-700 rounded-2xl px-6 md:px-10 py-4"
+      class="mx-auto flex min-h-[92svh] max-w-6xl flex-col justify-between px-4 pb-12 pt-32 sm:px-6 md:pb-16 md:pt-36"
     >
-      <div class="text-center">
-        <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">
-          15+
+      <div class="flex flex-col gap-6">
+        <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
+          {t("hero.location")}
         </p>
-        <p class="text-xs text-slate-500">{t("stats.years")}</p>
+        <h1
+          class="text-[clamp(3.25rem,9.5vw,8rem)] font-semibold leading-[0.88] tracking-[-0.04em] text-slate-900 dark:text-white"
+        >
+          <span class="block overflow-hidden pb-1">
+            <span class="reveal-line block">Gustavo Herrera</span>
+          </span>
+          <span class="block overflow-hidden pb-2 text-emerald-600 dark:text-emerald-400">
+            <span class="reveal-line-delay block">{t("hero.role")}</span>
+          </span>
+        </h1>
       </div>
-      <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
-      <div class="text-center">
-        <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">
-          333+
-        </p>
-        <p class="text-xs text-slate-500">{t("stats.repos")}</p>
-      </div>
-      <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
-      <div class="text-center">
-        <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">
-          5.0
-        </p>
-        <p class="text-xs text-slate-500">{t("stats.rating")}</p>
-      </div>
-      <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
-      <div class="text-center">
-        <p class="text-2xl font-bold text-slate-800 dark:text-slate-200">
-          28
-        </p>
-        <p class="text-xs text-slate-500">{t("stats.reviews")}</p>
+
+      <div
+        class="mt-12 flex flex-col justify-between gap-10 pt-8 lg:flex-row lg:items-end"
+      >
+        <div class="flex max-w-xl flex-col gap-6">
+          <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300 md:text-xl">
+            {t("hero.description")}
+          </p>
+          <div class="flex flex-wrap items-center gap-3">
+            <a
+              href="https://www.freelancer.com/u/gustavoherrera84"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex h-11 items-center rounded-xl bg-emerald-600 px-6 text-sm font-semibold text-white transition-colors hover:bg-emerald-500"
+            >
+              {t("hero.hireMe")}
+            </a>
+            <a
+              href="#projects"
+              class="inline-flex h-11 items-center rounded-xl border border-slate-300 px-6 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-100 dark:border-white/15 dark:text-slate-200 dark:hover:bg-white/5"
+            >
+              {t("hero.viewProjects")}
+            </a>
+          </div>
+        </div>
+
+        <dl class="grid grid-cols-4 gap-6 sm:gap-10">
+          <div>
+            <dt class="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {t("stats.years")}
+            </dt>
+            <dd class="mt-1 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white md:text-3xl">
+              15+
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {t("stats.repos")}
+            </dt>
+            <dd class="mt-1 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white md:text-3xl">
+              333+
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {t("stats.rating")}
+            </dt>
+            <dd class="mt-1 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white md:text-3xl">
+              5.0
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {t("stats.reviews")}
+            </dt>
+            <dd class="mt-1 text-2xl font-semibold tabular-nums text-slate-900 dark:text-white md:text-3xl">
+              28
+            </dd>
+          </div>
+        </dl>
       </div>
     </div>
-
-    <div class="flex flex-wrap gap-3 justify-center mt-2">
-      <a
-        href="https://www.freelancer.com/u/gustavoherrera84"
-        target="_blank"
-        rel="noreferrer"
-        class="px-5 py-2 rounded-full bg-slate-800 dark:bg-slate-200 text-slate-100 dark:text-slate-800 text-sm font-medium hover:opacity-90 transition-opacity"
-      >
-        {t("hero.hireMe")}
-      </a>
-      <a
-        href="#projects"
-        class="px-5 py-2 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-      >
-        {t("hero.viewProjects")}
-      </a>
-    </div>
-
-    <DownIcon className="text-2xl animate-bounce mt-2" />
   </section>
 
   <!-- Projects -->
-  <section
-    id="projects"
-    class="flex flex-col w-full justify-center items-center gap-28"
-  >
-    <h2 class="font-bold">{t("section.projects")}</h2>
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <h2 class="mb-12 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl">
+      {t("section.projects")}
+    </h2>
     <ProjectSection lang={lang} client:load />
   </section>
 
   <!-- Skills -->
-  <section
-    id="skills"
-    class="flex flex-col w-full justify-center items-center gap-16 mt-56"
-  >
-    <h2 class="font-bold">{t("section.skills")}</h2>
-    <SkillsSection lang={lang} />
+  <section id="skills" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <h2 class="mb-12 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl">
+      {t("section.skills")}
+    </h2>
+    <SkillsSection lang={lang} client:load />
   </section>
 
   <!-- Experience -->
-  <section
-    id="experience"
-    class="flex flex-col w-full justify-center items-center gap-28 mt-56"
-  >
-    <h2 class="font-bold">{t("section.experience")}</h2>
+  <section id="experience" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <h2 class="mb-12 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl">
+      {t("section.experience")}
+    </h2>
     <Timeline lang={lang} />
   </section>
 
   <!-- Posts -->
-  <section
-    id="posts"
-    class="flex flex-col w-full justify-center items-center gap-28 mt-56"
-  >
-    <h2 class="font-bold">{t("section.posts")}</h2>
-    <PostsSection lang={lang} client:load />
+  <section id="posts" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <h2 class="mb-12 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl">
+      {t("section.posts")}
+    </h2>
+    <PostsSection lang={lang} />
   </section>
 
   <!-- About -->
-  <section
-    id="about"
-    class="flex flex-col w-full justify-center items-center gap-16 mt-56"
-  >
-    <h2 class="font-bold">{t("section.about")}</h2>
-    <div class="flex flex-col md:flex-row items-center gap-10 max-w-[700px]">
-      <Avatar
-        src="https://avatars.githubusercontent.com/u/6331999?v=4"
-        alt="Gustavo Herrera"
-        client:load
-      />
-      <div class="flex flex-col gap-4 text-center md:text-left">
+  <section id="about" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <h2 class="mb-12 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl">
+      {t("section.about")}
+    </h2>
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+      <div class="flex flex-col gap-6 md:col-span-4">
+        <Avatar
+          src="https://avatars.githubusercontent.com/u/6331999?v=4"
+          alt="Gustavo Herrera"
+          client:load
+        />
+        <dl class="flex flex-col gap-4 pt-2">
+          <div>
+            <dt class="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {t("about.locationLabel")}
+            </dt>
+            <dd class="text-sm font-medium text-slate-900 dark:text-white">
+              {t("hero.location")}
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {t("about.focusLabel")}
+            </dt>
+            <dd class="text-sm font-medium text-slate-900 dark:text-white">
+              {t("about.focusValue")}
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-medium text-slate-500 dark:text-slate-400">
+              {t("about.sinceLabel")}
+            </dt>
+            <dd class="text-sm font-medium text-slate-900 dark:text-white">
+              2005
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="flex flex-col gap-5 text-lg leading-relaxed text-slate-700 dark:text-slate-300 md:col-span-8 md:text-xl">
         <p>
           {t("about.p1Start")}
-          <strong>Gustavo Herrera</strong>{t("about.p1End")}
+          <strong class="font-semibold text-slate-900 dark:text-white">Gustavo Herrera</strong>{t("about.p1End")}
         </p>
-        <p>
-          {t("about.p2")}
-        </p>
-        <p>
-          {t("about.p3")}
-        </p>
+        <p>{t("about.p2")}</p>
+        <p>{t("about.p3")}</p>
       </div>
     </div>
   </section>
@@ -162,74 +188,89 @@ const t = useTranslations(lang)
   <!-- Contact -->
   <section
     id="contact"
-    class="flex flex-col w-full justify-center items-center gap-12 mt-56"
+    class="bg-slate-100/70 dark:bg-[#0b0f17]"
   >
-    <h2 class="font-bold">{t("section.contact")}</h2>
-    <div class="flex flex-col items-center gap-6 max-w-[500px] text-center">
-      <p>
-        {t("contact.description")}
-      </p>
+    <div class="mx-auto flex max-w-6xl flex-col justify-between gap-12 px-4 py-20 sm:px-6 md:py-28">
+      <div class="flex flex-col gap-4">
+        <h2 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl">
+          {t("section.contact")}
+        </h2>
+        <p class="max-w-xl text-lg text-slate-600 dark:text-slate-300">
+          {t("contact.description")}
+        </p>
+      </div>
+
       <a
         href="mailto:gustavoh.2312@gmail.com"
-        class="text-lg font-medium text-slate-800 dark:text-slate-200 hover:underline"
+        class="w-fit break-all text-2xl font-semibold tracking-tight text-slate-900 transition-colors hover:text-emerald-600 dark:text-white dark:hover:text-emerald-400 sm:text-4xl md:text-6xl"
       >
         gustavoh.2312@gmail.com
       </a>
-      <div class="flex gap-6 text-2xl text-slate-700 dark:text-slate-300">
+
+      <div class="flex flex-col justify-between gap-6 pt-8 sm:flex-row sm:items-center">
+        <div class="flex items-center gap-5 text-xl text-slate-600 dark:text-slate-400">
+          <a
+            href="https://github.com/arcanoix"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            class="transition-colors hover:text-slate-900 dark:hover:text-white"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/thavoo/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            class="transition-colors hover:text-slate-900 dark:hover:text-white"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://dev.to/arcanoix"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="DEV"
+            class="transition-colors hover:text-slate-900 dark:hover:text-white"
+          >
+            <FaDev />
+          </a>
+          <a
+            href="https://x.com/arcanoix_"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="X"
+            class="transition-colors hover:text-slate-900 dark:hover:text-white"
+          >
+            <FaXTwitter />
+          </a>
+          <a
+            href="https://wa.me/+584121367894"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp"
+            class="transition-colors hover:text-slate-900 dark:hover:text-white"
+          >
+            <FaWhatsapp />
+          </a>
+        </div>
+
         <a
-          href="https://github.com/arcanoix"
+          href="https://www.freelancer.com/u/gustavoherrera84"
           target="_blank"
           rel="noreferrer"
-          class="hover:scale-110 transition-transform"
+          class="text-sm font-medium text-slate-600 hover:underline dark:text-slate-400"
         >
-          <FaGithub />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/thavoo/"
-          target="_blank"
-          rel="noreferrer"
-          class="hover:scale-110 transition-transform"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://dev.to/arcanoix"
-          target="_blank"
-          rel="noreferrer"
-          class="hover:scale-110 transition-transform"
-        >
-          <FaDev />
-        </a>
-        <a
-          href="https://x.com/arcanoix_"
-          target="_blank"
-          rel="noreferrer"
-          class="hover:scale-110 transition-transform"
-        >
-          <FaXTwitter />
-        </a>
-        <a
-          href="https://wa.me/+584121367894"
-          target="_blank"
-          rel="noreferrer"
-          class="hover:scale-110 transition-transform"
-        >
-          <FaWhatsapp />
+          freelancer.com/u/gustavoherrera84
         </a>
       </div>
-      <a
-        href="https://www.freelancer.com/u/gustavoherrera84"
-        target="_blank"
-        rel="noreferrer"
-        class="text-sm text-slate-500 dark:text-slate-400 hover:underline"
-      >
-        freelancer.com/u/gustavoherrera84
-      </a>
     </div>
   </section>
 </main>
-<footer>
-  <p class="text-center text-sm text-slate-700 dark:text-slate-400 p-4 mt-28">
+
+<footer class="bg-slate-100/70 dark:bg-[#0b0f17]">
+  <p class="mx-auto max-w-6xl px-4 py-6 text-center text-sm text-slate-500 dark:text-slate-400 sm:px-6">
     {t("footer.made")} &#x2665; by Gustavo Herrera | @arcanoix
   </p>
 </footer>

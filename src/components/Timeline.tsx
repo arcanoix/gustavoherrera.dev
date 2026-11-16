@@ -1,4 +1,5 @@
 import { EXPERIENCES } from "@/content/experiences"
+import { useTranslations } from "@/i18n/utils"
 import type { Lang } from "@/i18n/ui"
 
 interface TimelineProps {
@@ -7,23 +8,43 @@ interface TimelineProps {
 
 const Timeline = ({ lang }: TimelineProps) => {
   const experiences = EXPERIENCES[lang]
+  const t = useTranslations(lang)
 
   return (
-    <section className="flex flex-col max-w-[800px]">
-      <div className="relative border-l-4 border-slate-700 ml-6">
-        {experiences.map((experience, index) => (
-          <div key={index} className="relative mb-10 ml-6">
-            <div className="absolute w-4 h-4 bg-slate-700 rounded-full -left-[34px]  top-1.5"></div>
-            <p className="text-sm text-gray-500">{experience.date}</p>
-            <h3 className="text-xl font-semibold">{experience.jobTitle}</h3>
-            <h4 className="text-md text-gray-700 font-medium">
+    <div className="flex flex-col gap-8">
+      {experiences.map((experience, index) => (
+        <article
+          key={index}
+          className="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 dark:bg-[#0b0f17] md:grid-cols-12 md:gap-10 md:p-8"
+        >
+          <div className="flex flex-col gap-1.5 md:col-span-4">
+            <div className="flex items-center gap-2">
+              {index === 0 && (
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-400/10 dark:text-emerald-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  {t("experience.current")}
+                </span>
+              )}
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                {experience.date}
+              </p>
+            </div>
+            <h3 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+              {experience.jobTitle}
+            </h3>
+            <p className="text-sm font-medium text-slate-600 dark:text-slate-300">
               {experience.company}
-            </h4>
-            <p className="text-gray-600 mt-2">{experience.description}</p>
+            </p>
           </div>
-        ))}
-      </div>
-    </section>
+
+          <div className="md:col-span-8">
+            <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300 md:text-lg">
+              {experience.description}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
   )
 }
 

@@ -1,6 +1,6 @@
 ---
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro"
-import SmoothScroll from "@/components/SmoothScroll"
+import Navbar from "@/components/Navbar"
 import { useTranslations } from "@/i18n/utils"
 import { defaultLang, type Lang } from "@/i18n/ui"
 
@@ -14,35 +14,43 @@ const base = Astro.site ?? Astro.url.origin
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/fav.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Gustavo Herrera | Senior Fullstack Developer</title>
+    <title>Gustavo Herrera | AI Engineer</title>
     <meta name="description" content={t("meta.description")} />
-    <meta property="og:title" content="Gustavo Herrera | Senior Fullstack Developer" />
+    <meta property="og:title" content="Gustavo Herrera | AI Engineer" />
     <meta property="og:description" content={t("meta.ogDescription")} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@arcanoix_" />
     <link rel="alternate" hreflang="en" href={new URL("/", base)} />
     <link rel="alternate" hreflang="es" href={new URL("/es/", base)} />
     <link rel="alternate" hreflang="x-default" href={new URL("/", base)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      ;(function () {
+        try {
+          var saved = localStorage.getItem("theme")
+          if (saved === "light") {
+            document.documentElement.classList.remove("dark")
+          } else {
+            document.documentElement.classList.add("dark")
+          }
+        } catch (e) {}
+      })()
+    </script>
     <GoogleAnalytics />
   </head>
-  <body>
-    <SmoothScroll lang={lang} client:only>
-      <slot />
-    </SmoothScroll>
+  <body class="bg-slate-50 text-slate-900 dark:bg-[#07090e] dark:text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+    <Navbar lang={lang} client:load />
+    <slot />
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>

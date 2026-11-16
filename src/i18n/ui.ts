@@ -12,6 +12,16 @@ export const ui = {
     "meta.ogDescription":
       "AI Engineer & Senior Fullstack Developer with 15+ years building scalable systems, RAG architectures, AI agents, and REST APIs.",
     "nav.switchTo": "Switch to Spanish",
+    "nav.projects": "Projects",
+    "nav.skills": "Skills",
+    "nav.experience": "Experience",
+    "nav.about": "About",
+    "skills.all": "All",
+    "experience.current": "Current",
+    "about.locationLabel": "Location",
+    "about.focusLabel": "Focus",
+    "about.focusValue": "AI Engineering & Backend",
+    "about.sinceLabel": "Coding since",
     loading: "Loading...",
     "hero.role": "AI Engineer",
     "hero.description":
@@ -47,6 +57,16 @@ export const ui = {
     "meta.ogDescription":
       "AI Engineer y Desarrollador Fullstack Senior con más de 15 años construyendo sistemas escalables, arquitecturas RAG, agentes de IA y APIs REST.",
     "nav.switchTo": "Cambiar a inglés",
+    "nav.projects": "Proyectos",
+    "nav.skills": "Habilidades",
+    "nav.experience": "Experiencia",
+    "nav.about": "Sobre mí",
+    "skills.all": "Todas",
+    "experience.current": "Actual",
+    "about.locationLabel": "Ubicación",
+    "about.focusLabel": "Enfoque",
+    "about.focusValue": "AI Engineering y Backend",
+    "about.sinceLabel": "Programando desde",
     loading: "Cargando...",
     "hero.role": "AI Engineer",
     "hero.description":

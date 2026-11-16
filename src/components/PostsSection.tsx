@@ -10,7 +10,7 @@ const PostsSection = ({ lang }: PostsSectionProps) => {
   const posts = POSTS[lang]
 
   return (
-    <div className="flex flex-col md:w-[700px] lg:w-[800px] w-full justify-center items-center gap-7">
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
       {posts.map(({ title, description, date, tags, url }) => (
         <PostCard
           key={title}
