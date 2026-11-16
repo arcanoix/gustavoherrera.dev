@@ -2,7 +2,19 @@ export const SKILLS = {
   en: [
     {
       category: "AI & LLMs",
-      items: ["Python", "OpenAI API", "Anthropic", "DeepSeek", "RAG", "AI Agents", "LLMs"],
+      items: [
+        "Python",
+        "FastAPI",
+        "OpenAI API",
+        "Anthropic",
+        "DeepSeek",
+        "RAG",
+        "AI Agents",
+        "LLMs",
+        "Prompt Engineering",
+        "MCP",
+        "pgvector",
+      ],
     },
     {
       category: "Backend",
@@ -28,7 +40,19 @@ export const SKILLS = {
   es: [
     {
       category: "IA y LLMs",
-      items: ["Python", "OpenAI API", "Anthropic", "DeepSeek", "RAG", "Agentes de IA", "LLMs"],
+      items: [
+        "Python",
+        "FastAPI",
+        "OpenAI API",
+        "Anthropic",
+        "DeepSeek",
+        "RAG",
+        "Agentes de IA",
+        "LLMs",
+        "Prompt Engineering",
+        "MCP",
+        "pgvector",
+      ],
     },
     {
       category: "Backend",
