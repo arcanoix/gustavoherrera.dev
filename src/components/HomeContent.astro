@@ -5,6 +5,7 @@ import Timeline from "@/components/Timeline"
 import Avatar from "@/components/Avatar"
 import SkillsSection from "@/components/SkillsSection"
 import HeroCorePanel from "@/components/HeroCorePanel"
+import RoleTypewriter from "@/components/RoleTypewriter"
 import { FaGithub, FaLinkedin, FaDev, FaWhatsapp } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { useTranslations } from "@/i18n/utils"
@@ -36,7 +37,9 @@ const t = useTranslations(lang)
               <span class="reveal-line block">Gustavo Herrera</span>
             </span>
             <span class="block overflow-hidden pb-2 text-emerald-600 dark:text-emerald-400">
-              <span class="reveal-line-delay block">{t("hero.role")}.</span>
+              <span class="reveal-line-delay block min-h-[1.05em]">
+                <RoleTypewriter client:load />
+              </span>
             </span>
           </h1>
           <p class="max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300 md:text-lg">

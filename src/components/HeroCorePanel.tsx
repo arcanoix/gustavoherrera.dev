@@ -181,13 +181,17 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
         />
 
         {/* Rotating radar sweep */}
-        <svg
+        <div
           aria-hidden="true"
-          viewBox="0 0 100 100"
-          className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 animate-[spin_10s_linear_infinite] text-emerald-500/20"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2"
         >
-          <path d="M50 50 L50 0 A50 50 0 0 1 93.3 25 Z" fill="currentColor" />
-        </svg>
+          <svg
+            viewBox="0 0 100 100"
+            className="h-full w-full origin-center animate-[spin_8s_linear_infinite] text-emerald-500/25"
+          >
+            <path d="M50 50 L50 0 A50 50 0 0 1 93.3 25 Z" fill="currentColor" />
+          </svg>
+        </div>
 
         {/* SVG connector lines from center (50,50) to each node */}
         <svg
