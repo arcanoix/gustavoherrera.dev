@@ -29,7 +29,7 @@
   }
 
   .dark {
-    --surface: rgba(24, 18, 40, 0.65);
+    --surface: rgba(12, 11, 18, 0.78);
     --surface-border: rgba(196, 181, 253, 0.14);
     --background: 252 29% 4%;
     --foreground: 210 40% 98%;
@@ -119,7 +119,7 @@ body {
   background-image:
     radial-gradient(
       ellipse at 82% 5%,
-      rgba(124, 58, 237, 0.17),
+      rgba(124, 58, 237, 0.07),
       transparent 38%
     ),
     radial-gradient(
@@ -301,5 +301,100 @@ section[id] {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* Reference-inspired display type and holographic motion; content stays personal. */
+.hero-title,
+.section-heading {
+  font-family: "Michroma", "Hanken Grotesk", sans-serif;
+}
+
+.hero-title {
+  font-size: clamp(1.4rem, 3vw, 2.7rem);
+  line-height: 1.24;
+  letter-spacing: -0.045em;
+}
+
+.hero-title .hero-accent {
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+
+.section-heading {
+  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+}
+
+.hero-core {
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(124, 92, 255, 0.16),
+      transparent 68%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(139, 92, 246, 0.045) 0 1px,
+      transparent 1px 4px
+    ),
+    radial-gradient(rgba(167, 139, 250, 0.1) 0.7px, transparent 0.7px) 0 0 /
+      18px 18px,
+    var(--surface);
+  transform: perspective(1100px) rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+  transition:
+    transform 220ms ease-out,
+    box-shadow 250ms ease-out;
+}
+
+.hero-core::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    transparent,
+    rgba(167, 139, 250, 0.06),
+    transparent
+  );
+  transform: translateY(-100%);
+  animation: hudScan 10s linear infinite;
+}
+
+.hero-core:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(196, 181, 253, 0.15),
+    0 24px 70px rgba(124, 92, 255, 0.18);
+}
+
+.orbit-beam {
+  animation: beamTravel 2s linear infinite;
+}
+
+@keyframes beamTravel {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+@keyframes hudScan {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: 639px) {
+  .orbit-stage > button {
+    opacity: 1 !important;
+    filter: none !important;
+    z-index: 20 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-core {
+    transform: none !important;
   }
 }

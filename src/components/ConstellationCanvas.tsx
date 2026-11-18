@@ -26,10 +26,10 @@ const ConstellationCanvas = () => {
     let height = (canvas.height = window.innerHeight)
 
     const particleCount = Math.min(
-      75,
-      Math.max(35, Math.floor((width * height) / 22000))
+      180,
+      Math.max(36, Math.floor((width * height) / 9000))
     )
-    const maxDistance = 145
+    const maxDistance = width < 640 ? 150 : 230
 
     const particles: Particle[] = Array.from({ length: particleCount }, () => ({
       x: Math.random() * width,
@@ -63,6 +63,7 @@ const ConstellationCanvas = () => {
     const draw = () => {
       const isDark = document.documentElement.classList.contains("dark")
       ctx.clearRect(0, 0, width, height)
+      const time = prefersReducedMotion ? 0 : performance.now() / 1200
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
@@ -90,6 +91,32 @@ const ConstellationCanvas = () => {
           ctx.stroke()
         }
 
+        // A few luminous anchors give the network depth without glowing every edge.
+        if (i % 11 === 0) {
+          const pulse = 0.65 + Math.sin(time + i) * 0.25
+          const glow = ctx.createRadialGradient(
+            p.x,
+            p.y,
+            0,
+            p.x,
+            p.y,
+            p.radius * 6
+          )
+          glow.addColorStop(
+            0,
+            `rgba(167, 139, 250, ${pulse * (isDark ? 0.55 : 0.22)})`
+          )
+          glow.addColorStop(1, "rgba(167, 139, 250, 0)")
+          ctx.fillStyle = glow
+          ctx.beginPath()
+          ctx.arc(p.x, p.y, p.radius * 6, 0, Math.PI * 2)
+          ctx.fill()
+          ctx.strokeStyle = `rgba(167, 139, 250, ${isDark ? 0.32 : 0.2})`
+          ctx.beginPath()
+          ctx.arc(p.x, p.y, p.radius * 2.5, 0, Math.PI * 2)
+          ctx.stroke()
+        }
+
         // Draw node
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
@@ -98,15 +125,16 @@ const ConstellationCanvas = () => {
           : "rgba(15, 23, 42, 0.22)"
         ctx.fill()
 
-        // Draw connections
-        for (let j = i + 1; j < particles.length; j++) {
+        // Limit each anchor's outgoing links so the mesh does not obscure content.
+        let connections = 0
+        for (let j = i + 1; j < particles.length && connections < 3; j++) {
           const q = particles[j]
           const dx = p.x - q.x
           const dy = p.y - q.y
           const dist = Math.hypot(dx, dy)
 
           if (dist < maxDistance) {
-            const alpha = (1 - dist / maxDistance) * (isDark ? 0.22 : 0.14)
+            const alpha = (1 - dist / maxDistance) * (isDark ? 0.24 : 0.12)
             ctx.beginPath()
             ctx.strokeStyle = isDark
               ? `rgba(167, 139, 250, ${alpha})`
@@ -115,6 +143,7 @@ const ConstellationCanvas = () => {
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(q.x, q.y)
             ctx.stroke()
+            connections++
           }
         }
       }

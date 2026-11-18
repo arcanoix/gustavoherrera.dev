@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type PointerEvent } from "react"
 import type { Lang } from "@/i18n/ui"
 
 interface HeroCorePanelProps {
@@ -134,6 +134,26 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
 
   const activeNode = nodes.find((n) => n.id === activeId) ?? nodes[0]
 
+  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (
+      event.pointerType !== "mouse" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return
+    const panel = event.currentTarget
+    const bounds = panel.getBoundingClientRect()
+    const x = Math.max(
+      0,
+      Math.min(1, (event.clientX - bounds.left) / bounds.width)
+    )
+    const y = Math.max(
+      0,
+      Math.min(1, (event.clientY - bounds.top) / bounds.height)
+    )
+    panel.style.setProperty("--tilt-x", `${(0.5 - y) * 5}deg`)
+    panel.style.setProperty("--tilt-y", `${(x - 0.5) * 6}deg`)
+  }
+
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -167,7 +187,13 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
 
         const btn = nodeRefs.current[idx]
         if (btn) {
-          btn.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`
+          const depth = prefersReducedMotion ? 1 : (Math.sin(theta) + 1) / 2
+          const emphasized =
+            nodes[idx].id === activeId || document.activeElement === btn
+          btn.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${emphasized ? 1 : 0.78 + depth * 0.22})`
+          btn.style.opacity = String(emphasized ? 1 : 0.45 + depth * 0.55)
+          btn.style.filter = `blur(${emphasized ? 0 : (1 - depth) * 1.1}px)`
+          btn.style.zIndex = String(20 + Math.round(depth * 10))
         }
 
         const line = lineRefs.current[idx]
@@ -186,11 +212,16 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
 
     frameId = requestAnimationFrame(positionNodes)
     return () => cancelAnimationFrame(frameId)
-  }, [nodes, isPaused])
+  }, [nodes, isPaused, activeId])
 
   return (
     <div
       data-ui="true"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={(event) => {
+        event.currentTarget.style.setProperty("--tilt-x", "0deg")
+        event.currentTarget.style.setProperty("--tilt-y", "0deg")
+      }}
       className="glass-panel hero-core relative overflow-hidden rounded-2xl p-4 sm:p-5"
     >
       {/* Corner HUD brackets */}
@@ -278,7 +309,7 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
                 strokeOpacity={isActive ? 0.8 : 0.16}
                 strokeWidth={isActive ? 1.4 : 0.9}
                 strokeDasharray="2 4"
-                className="text-slate-500 dark:text-slate-400 transition-opacity duration-200"
+                className="orbit-beam text-slate-500 dark:text-slate-400 transition-opacity duration-200"
               />
             )
           })}
