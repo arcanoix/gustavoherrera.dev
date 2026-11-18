@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import { Cpu } from "lucide-react"
 import type { Lang } from "@/i18n/ui"
 
 interface HeroCorePanelProps {
@@ -19,25 +18,29 @@ const SERVICES: Record<Lang, ServiceNode[]> = {
       id: "ai",
       label: "AI & Agents",
       stack: "Python · OpenAI · Anthropic · DeepSeek",
-      detail: "Autonomous AI agents and LLM workflows tailored to business rules.",
+      detail:
+        "Autonomous AI agents and LLM workflows tailored to business rules.",
     },
     {
       id: "rag",
       label: "RAG Systems",
       stack: "FastAPI · pgvector · Embeddings",
-      detail: "Semantic search and grounded retrieval over enterprise documents.",
+      detail:
+        "Semantic search and grounded retrieval over enterprise documents.",
     },
     {
       id: "saas",
       label: "SaaS Platforms",
       stack: "Next.js · Laravel · PostgreSQL",
-      detail: "Multi-tenant SaaS products built from architecture to production.",
+      detail:
+        "Multi-tenant SaaS products built from architecture to production.",
     },
     {
       id: "apis",
       label: "REST APIs",
       stack: "Go · Python · Laravel · Docker",
-      detail: "High-throughput APIs and microservices with zero-downtime deploys.",
+      detail:
+        "High-throughput APIs and microservices with zero-downtime deploys.",
     },
     {
       id: "dashboards",
@@ -75,25 +78,29 @@ const SERVICES: Record<Lang, ServiceNode[]> = {
       id: "rag",
       label: "Sistemas RAG",
       stack: "FastAPI · pgvector · Embeddings",
-      detail: "Búsqueda semántica y recuperación precisa sobre datos empresariales.",
+      detail:
+        "Búsqueda semántica y recuperación precisa sobre datos empresariales.",
     },
     {
       id: "saas",
       label: "SaaS",
       stack: "Next.js · Laravel · PostgreSQL",
-      detail: "Plataformas SaaS multi-tenant desde la arquitectura hasta producción.",
+      detail:
+        "Plataformas SaaS multi-tenant desde la arquitectura hasta producción.",
     },
     {
       id: "apis",
       label: "APIs REST",
       stack: "Go · Python · Laravel · Docker",
-      detail: "Microservicios y APIs de alto rendimiento sin tiempo de inactividad.",
+      detail:
+        "Microservicios y APIs de alto rendimiento sin tiempo de inactividad.",
     },
     {
       id: "dashboards",
       label: "Dashboards",
       stack: "React · TypeScript · Tailwind CSS",
-      detail: "Paneles operativos, analítica y flujos administrativos en tiempo real.",
+      detail:
+        "Paneles operativos, analítica y flujos administrativos en tiempo real.",
     },
     {
       id: "mobile",
@@ -184,21 +191,33 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
   return (
     <div
       data-ui="true"
-      className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 dark:border-white/10 dark:bg-[#0b0f17]"
+      className="glass-panel hero-core relative overflow-hidden rounded-2xl p-4 sm:p-5"
     >
       {/* Corner HUD brackets */}
-      <span aria-hidden="true" className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-emerald-500/40" />
-      <span aria-hidden="true" className="pointer-events-none absolute right-3 top-3 h-3 w-3 border-r border-t border-emerald-500/40" />
-      <span aria-hidden="true" className="pointer-events-none absolute bottom-3 left-3 h-3 w-3 border-b border-l border-emerald-500/40" />
-      <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-3 h-3 w-3 border-b border-r border-emerald-500/40" />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-violet-500/40"
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-3 top-3 h-3 w-3 border-r border-t border-violet-500/40"
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-3 left-3 h-3 w-3 border-b border-l border-violet-500/40"
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-3 right-3 h-3 w-3 border-b border-r border-violet-500/40"
+      />
 
       {/* Top HUD Bar */}
       <div className="flex items-center justify-between px-1 text-xs tracking-[0.18em] text-slate-500 dark:text-slate-400">
         <span className="font-semibold text-slate-800 dark:text-slate-200">
           ARCANOIX // CORE
         </span>
-        <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+        <span className="inline-flex items-center gap-1.5 text-violet-600 dark:text-violet-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
           {lang === "es" ? "en línea" : "online"}
         </span>
       </div>
@@ -208,7 +227,7 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
         ref={stageRef}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative my-4 h-[310px] w-full overflow-hidden rounded-xl bg-slate-100/70 dark:bg-[#07090e]"
+        className="orbit-stage relative my-4 h-[330px] w-full overflow-hidden rounded-xl"
       >
         {/* Elliptical orbital rings */}
         <svg
@@ -223,7 +242,7 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
             rx="37"
             ry="20.5"
             fill="none"
-            stroke="rgba(16, 185, 129, 0.28)"
+            stroke="rgba(167, 139, 250, 0.28)"
             strokeWidth="0.3"
             strokeDasharray="1 1.5"
             vectorEffect="non-scaling-stroke"
@@ -255,7 +274,7 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
                 ref={(el) => {
                   lineRefs.current[idx] = el
                 }}
-                stroke={isActive ? "#10b981" : "currentColor"}
+                stroke={isActive ? "#a78bfa" : "currentColor"}
                 strokeOpacity={isActive ? 0.8 : 0.16}
                 strokeWidth={isActive ? 1.4 : 0.9}
                 strokeDasharray="2 4"
@@ -268,12 +287,13 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
         {/* Stationary centered radar + counter-rotating rings + core emblem */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 z-10 aspect-square h-[48%] -translate-x-1/2 -translate-y-1/2"
+          className="orbit-core pointer-events-none absolute left-1/2 top-1/2 z-10 aspect-square h-[48%] -translate-x-1/2 -translate-y-1/2"
         >
+          <span className="core-halo" />
           {/* Rotating radar sweep */}
           <svg
             viewBox="0 0 100 100"
-            className="absolute inset-0 h-full w-full origin-center animate-[spin_6s_linear_infinite] text-emerald-500/25"
+            className="absolute inset-0 h-full w-full origin-center animate-[spin_6s_linear_infinite] text-violet-500/25"
           >
             <path d="M50 50 L50 2 A48 48 0 0 1 91.5 26 Z" fill="currentColor" />
           </svg>
@@ -288,7 +308,7 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
               cy="50"
               r="48"
               fill="none"
-              stroke="rgba(16, 185, 129, 0.5)"
+              stroke="rgba(167, 139, 250, 0.5)"
               strokeWidth="0.7"
               strokeDasharray="2 6"
             />
@@ -313,8 +333,8 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
           </svg>
 
           {/* Center Core Emblem */}
-          <div className="absolute inset-[30%] flex items-center justify-center rounded-2xl border border-emerald-500/45 bg-emerald-500/15 text-emerald-600 dark:border-emerald-400/45 dark:bg-emerald-500/20 dark:text-emerald-300">
-            <Cpu className="h-6 w-6" />
+          <div className="core-emblem absolute inset-[30%] flex items-center justify-center rounded-2xl text-lg font-bold tracking-tighter">
+            GH
           </div>
         </div>
 
@@ -331,10 +351,10 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
               onMouseEnter={() => setActiveId(node.id)}
               onFocus={() => setActiveId(node.id)}
               onClick={() => setActiveId(node.id)}
-              className={`absolute left-0 top-0 z-20 whitespace-nowrap rounded-xl border px-3 py-1.5 text-xs font-medium will-change-transform transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+              className={`absolute left-0 top-0 z-20 whitespace-nowrap rounded-xl border px-3 py-1.5 text-xs font-medium will-change-transform transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 ${
                 isActive
-                  ? "border-emerald-500 bg-emerald-600 text-white"
-                  : "border-slate-200 bg-white/95 text-slate-700 hover:border-emerald-500/50 hover:text-slate-900 dark:border-white/15 dark:bg-[#111724]/95 dark:text-slate-200 dark:hover:text-white"
+                  ? "border-violet-400/60 bg-violet-700 text-white shadow-[0_0_24px_rgba(139,92,246,0.25)]"
+                  : "border-violet-300/60 bg-white/90 text-slate-700 hover:border-violet-500/50 hover:text-slate-900 dark:border-white/15 dark:bg-[#1d172e]/75 dark:text-slate-200 dark:hover:text-white"
               }`}
             >
               {node.label}
@@ -344,9 +364,9 @@ const HeroCorePanel = ({ lang }: HeroCorePanelProps) => {
       </div>
 
       {/* Bottom Live Readout */}
-      <div className="flex flex-col gap-1.5 rounded-xl bg-slate-100/80 px-4 py-3 dark:bg-[#07090e]">
+      <div className="flex min-h-28 flex-col justify-center gap-1.5 rounded-xl border border-violet-500/10 bg-violet-50/70 px-4 py-3 dark:bg-black/20">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <span className="text-xs font-semibold text-violet-600 dark:text-violet-400">
             {activeNode.label}
           </span>
           <span className="text-xs text-slate-500 dark:text-slate-400">

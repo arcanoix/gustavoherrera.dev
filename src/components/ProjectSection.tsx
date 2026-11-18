@@ -25,9 +25,9 @@ const ProjectSection = ({ lang }: ProjectSectionProps) => {
               onMouseEnter={() => setActiveIndex(index)}
               onFocus={() => setActiveIndex(index)}
               onClick={() => setActiveIndex(index)}
-              className={`group flex flex-col gap-2 rounded-2xl p-5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+              className={`group flex flex-col gap-2 rounded-2xl p-5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 ${
                 isActive
-                  ? "bg-white text-slate-900 dark:bg-[#0b0f17] dark:text-white"
+                  ? "glass-panel text-slate-900 dark:text-white"
                   : "text-slate-500 hover:bg-slate-100/60 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-white/[0.03] dark:hover:text-slate-200"
               }`}
             >
@@ -38,7 +38,7 @@ const ProjectSection = ({ lang }: ProjectSectionProps) => {
                 <span
                   className={`inline-flex h-2 w-2 shrink-0 rounded-full transition-colors ${
                     isActive
-                      ? "bg-emerald-500"
+                      ? "bg-violet-500"
                       : "bg-slate-300 group-hover:bg-slate-400 dark:bg-white/15"
                   }`}
                 />
@@ -64,7 +64,7 @@ const ProjectSection = ({ lang }: ProjectSectionProps) => {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 hover:underline dark:text-emerald-400"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-violet-600 hover:underline dark:text-violet-400"
                   >
                     <link.icon className="h-3.5 w-3.5" />
                     <span>{link.name}</span>
@@ -80,8 +80,8 @@ const ProjectSection = ({ lang }: ProjectSectionProps) => {
       {/* Live preview panel */}
       {activeProject && (
         <div className="hidden lg:col-span-7 lg:block">
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-[#0d121c]">
-            <div className="aspect-[16/10] w-full overflow-hidden bg-slate-100 dark:bg-[#07090e]">
+          <div className="glass-panel overflow-hidden rounded-2xl">
+            <div className="aspect-[16/10] w-full overflow-hidden bg-slate-100 dark:bg-[#0a0812]">
               <img
                 src={activeProject.image}
                 alt={activeProject.title}
@@ -107,7 +107,7 @@ const ProjectSection = ({ lang }: ProjectSectionProps) => {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3.5 py-2 text-sm font-medium text-slate-800 transition-colors hover:border-emerald-500/60 hover:text-emerald-600 dark:border-white/10 dark:text-slate-200 dark:hover:border-emerald-400/50 dark:hover:text-emerald-400"
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3.5 py-2 text-sm font-medium text-slate-800 transition-colors hover:border-violet-500/60 hover:text-violet-600 dark:border-white/10 dark:text-slate-200 dark:hover:border-violet-400/50 dark:hover:text-violet-400"
                   >
                     <link.icon className="h-4 w-4" />
                     <span>{link.name}</span>

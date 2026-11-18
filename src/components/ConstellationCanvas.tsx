@@ -25,7 +25,10 @@ const ConstellationCanvas = () => {
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
 
-    const particleCount = Math.min(75, Math.max(35, Math.floor((width * height) / 22000)))
+    const particleCount = Math.min(
+      75,
+      Math.max(35, Math.floor((width * height) / 22000))
+    )
     const maxDistance = 145
 
     const particles: Particle[] = Array.from({ length: particleCount }, () => ({
@@ -79,8 +82,8 @@ const ConstellationCanvas = () => {
           const alpha = (1 - mDist / 170) * (isDark ? 0.35 : 0.25)
           ctx.beginPath()
           ctx.strokeStyle = isDark
-            ? `rgba(52, 211, 153, ${alpha})`
-            : `rgba(16, 185, 129, ${alpha})`
+            ? `rgba(167, 139, 250, ${alpha})`
+            : `rgba(124, 58, 237, ${alpha})`
           ctx.lineWidth = 0.9
           ctx.moveTo(p.x, p.y)
           ctx.lineTo(mouse.x, mouse.y)
@@ -91,7 +94,7 @@ const ConstellationCanvas = () => {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
         ctx.fillStyle = isDark
-          ? "rgba(52, 211, 153, 0.45)"
+          ? "rgba(167, 139, 250, 0.45)"
           : "rgba(15, 23, 42, 0.22)"
         ctx.fill()
 
@@ -106,7 +109,7 @@ const ConstellationCanvas = () => {
             const alpha = (1 - dist / maxDistance) * (isDark ? 0.22 : 0.14)
             ctx.beginPath()
             ctx.strokeStyle = isDark
-              ? `rgba(148, 163, 184, ${alpha})`
+              ? `rgba(167, 139, 250, ${alpha})`
               : `rgba(15, 23, 42, ${alpha})`
             ctx.lineWidth = 0.75
             ctx.moveTo(p.x, p.y)

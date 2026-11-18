@@ -59,7 +59,7 @@ const RoleTypewriter = () => {
       {!reducedMotion && (
         <span
           aria-hidden="true"
-          className="ml-1 inline-block h-[0.82em] w-[0.07em] translate-y-[0.05em] bg-emerald-500 dark:bg-emerald-400 animate-[pulse_1s_steps(2,start)_infinite]"
+          className="ml-1 inline-block h-[0.82em] w-[0.07em] translate-y-[0.05em] bg-violet-500 dark:bg-violet-400 animate-[pulse_1s_steps(2,start)_infinite]"
         />
       )}
     </span>

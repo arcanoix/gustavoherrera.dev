@@ -15,13 +15,13 @@ const Timeline = ({ lang }: TimelineProps) => {
       {experiences.map((experience, index) => (
         <article
           key={index}
-          className="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 dark:bg-[#0b0f17] md:grid-cols-12 md:gap-10 md:p-8"
+          className="glass-panel grid grid-cols-1 gap-6 rounded-2xl p-6 md:grid-cols-12 md:gap-10 md:p-8"
         >
           <div className="flex flex-col gap-1.5 md:col-span-4">
             <div className="flex items-center gap-2">
               {index === 0 && (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-400/10 dark:text-emerald-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-500/10 px-2.5 py-0.5 text-xs font-medium text-violet-700 dark:bg-violet-400/10 dark:text-violet-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
                   {t("experience.current")}
                 </span>
               )}

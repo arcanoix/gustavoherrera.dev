@@ -50,7 +50,9 @@ const base = Astro.site ?? Astro.url.origin
     </script>
     <GoogleAnalytics />
   </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-[#07090e] dark:text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+  <body
+    class="bg-slate-50 text-slate-900 dark:bg-[#0a0812] dark:text-slate-100 antialiased selection:bg-violet-200 selection:text-violet-950 dark:selection:bg-violet-500/30 dark:selection:text-violet-100"
+  >
     <ConstellationCanvas client:load />
     <Navbar lang={lang} client:load />
     <div class="relative z-10">

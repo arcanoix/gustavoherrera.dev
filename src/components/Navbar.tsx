@@ -23,20 +23,16 @@ const Navbar = ({ lang }: NavbarProps) => {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4">
       <nav
         aria-label="Primary navigation"
-        className="nav-glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-2.5 backdrop-blur-xl dark:border-white/10 dark:bg-[#0b0f17]/80"
+        className="nav-glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-2.5 backdrop-blur-xl dark:border-white/10 dark:bg-[#13101f]/80"
       >
         <a
           href="#"
-          className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+          className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
         >
-          <img
-            src="https://avatars.githubusercontent.com/u/6331999?v=4"
-            alt="Gustavo Herrera"
-            width={30}
-            height={30}
-            className="h-7 w-7 rounded-full border border-slate-300 dark:border-white/20"
-          />
-          <span className="text-sm font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+          <span aria-hidden="true" className="brand-mark">
+            GH
+          </span>
+          <span className="max-w-[7rem] text-sm font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:max-w-none">
             Gustavo Herrera
           </span>
         </a>
@@ -66,7 +62,7 @@ const Navbar = ({ lang }: NavbarProps) => {
           <ModeToggle />
           <a
             href="#contact"
-            className="hidden h-9 items-center rounded-xl bg-emerald-600 px-4 text-sm font-medium text-white transition-colors hover:bg-emerald-500 sm:inline-flex"
+            className="primary-action hidden min-h-10 items-center rounded-xl px-4 py-2 text-sm font-medium sm:inline-flex"
           >
             {t("hero.hireMe")}
           </a>
