@@ -6,6 +6,7 @@ import Avatar from "@/components/Avatar"
 import SkillsSection from "@/components/SkillsSection"
 import HeroCorePanel from "@/components/HeroCorePanel"
 import RoleTypewriter from "@/components/RoleTypewriter"
+import GlitchName from "@/components/GlitchName.astro"
 import { FaGithub, FaLinkedin, FaDev, FaWhatsapp } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { useTranslations } from "@/i18n/utils"
@@ -40,7 +41,7 @@ const t = useTranslations(lang)
           </p>
           <h1 class="hero-title font-semibold text-slate-900 dark:text-white">
             <span class="block overflow-hidden pb-1">
-              <span class="reveal-line block">Gustavo Herrera</span>
+              <span class="reveal-line block"><GlitchName /></span>
             </span>
             <span class="hero-accent block overflow-hidden pb-2">
               <span class="reveal-line-delay block min-h-[1.05em]">

@@ -1,0 +1,100 @@
+<span class="glitch-name">
+  <span class="sr-only">Gustavo Herrera</span>
+  <span class="glitch-name__visual" aria-hidden="true">
+    <span class="glitch-name__real">Gustavo Herrera</span>
+    <span class="glitch-name__alias">Arcanoix</span>
+  </span>
+</span>
+
+<style>
+  .glitch-name,
+  .glitch-name__visual {
+    display: block;
+  }
+
+  .glitch-name__visual {
+    position: relative;
+  }
+
+  .glitch-name__alias {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+  }
+
+  /* Keep the real name in flow so the shorter alias never shifts the title. */
+  @media (prefers-reduced-motion: no-preference) {
+    .glitch-name__visual {
+      animation: name-distortion 8s step-end infinite;
+    }
+
+    .glitch-name__real {
+      animation: real-name 8s step-end infinite;
+    }
+
+    .glitch-name__alias {
+      animation: alias-name 8s step-end infinite;
+    }
+  }
+
+  /* The alias is visible for 1.2 seconds, starting after 6.4 seconds. */
+  @keyframes real-name {
+    0%,
+    95%,
+    100% {
+      visibility: visible;
+    }
+    80% {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes alias-name {
+    0%,
+    95%,
+    100% {
+      visibility: hidden;
+    }
+    80% {
+      visibility: visible;
+    }
+  }
+
+  /* Short chromatic tears at each swap, not a continuously flashing title. */
+  @keyframes name-distortion {
+    0%,
+    79%,
+    83%,
+    94%,
+    98%,
+    100% {
+      transform: none;
+      text-shadow: none;
+      clip-path: none;
+    }
+    79.5%,
+    95% {
+      transform: translateX(-2px) skewX(-4deg);
+      text-shadow:
+        2px 0 #a78bfa,
+        -2px 0 #22d3ee;
+      clip-path: inset(8% 0 12% 0);
+    }
+    80.5%,
+    96% {
+      transform: translateX(2px) skewX(3deg);
+      text-shadow:
+        -2px 0 #a78bfa,
+        2px 0 #22d3ee;
+      clip-path: inset(18% 0 5% 0);
+    }
+    81.5%,
+    97% {
+      transform: translateX(-1px);
+      text-shadow:
+        1px 0 #a78bfa,
+        -1px 0 #22d3ee;
+      clip-path: none;
+    }
+  }
+</style>
