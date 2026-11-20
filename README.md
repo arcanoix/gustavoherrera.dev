@@ -1,6 +1,6 @@
 # Gustavo Herrera — Personal Portfolio
 
-[![Astro](https://img.shields.io/badge/Astro-5.x-BC52EE.svg?style=flat&logo=astro&logoColor=white)](https://astro.build)
+[![Astro](https://img.shields.io/badge/Astro-7.x-BC52EE.svg?style=flat&logo=astro&logoColor=white)](https://astro.build)
 [![React](https://img.shields.io/badge/React-19.x-61DAFB.svg?style=flat&logo=react&logoColor=black)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -13,7 +13,7 @@ Built with Astro, React, TypeScript source, and Tailwind CSS.
 
 ## Quick start
 
-Use **Node.js 22** (also used by the development Docker image) and npm.
+Use **Node.js 22.23.4 or newer** and npm. The development Docker image uses the latest Node.js 22 Alpine release.
 
 ```bash
 git clone https://github.com/arcanoix/gustavoherrera.dev.git
@@ -133,7 +133,7 @@ Public assets are served from the site root: `public/images/cover.png` is availa
 
 ## Stack
 
-- **Rendering:** Astro 5 static generation with hydrated React 19 islands for interactive sections.
+- **Rendering:** Astro 7 static generation with hydrated React 19 islands for interactive sections.
 - **Source:** Astro components and TypeScript/TSX.
 - **Styling:** Tailwind CSS 3.4, global CSS, and component-scoped styles.
 - **UI:** Radix UI primitives, Lucide, and React Icons.
