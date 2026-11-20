@@ -4,6 +4,7 @@ import PostsSection from "@/components/PostsSection"
 import Timeline from "@/components/Timeline"
 import Avatar from "@/components/Avatar"
 import SkillsSection from "@/components/SkillsSection"
+import ServicesSection from "@/components/ServicesSection.astro"
 import HeroCorePanel from "@/components/HeroCorePanel"
 import RoleTypewriter from "@/components/RoleTypewriter"
 import GlitchName from "@/components/GlitchName.astro"
@@ -70,6 +71,12 @@ const t = useTranslations(lang)
               <span>&#9654;</span>
               <span>{t("hero.viewProjects")}</span>
             </a>
+            <a
+              href="#services"
+              class="inline-flex min-h-12 items-center rounded-lg px-3 text-sm font-semibold text-violet-700 underline underline-offset-4 focus-visible:outline-violet-500 dark:text-violet-300 lg:hidden"
+            >
+              {t("nav.services")}
+            </a>
           </div>
           <dl
             class="grid grid-cols-2 gap-x-6 gap-y-4 border-t border-violet-500/15 pt-6 sm:grid-cols-4 sm:gap-8"
@@ -131,6 +138,8 @@ const t = useTranslations(lang)
       </div>
     </div>
   </section>
+
+  <ServicesSection lang={lang} />
 
   <!-- Projects -->
   <section id="projects" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">

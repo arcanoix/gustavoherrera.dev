@@ -12,6 +12,7 @@ export const ui = {
     "meta.ogDescription":
       "AI Engineer & Senior Fullstack Developer with 15+ years building scalable systems, RAG architectures, AI agents, and REST APIs.",
     "nav.switchTo": "Switch to Spanish",
+    "nav.services": "Services",
     "nav.projects": "Projects",
     "nav.skills": "Skills",
     "nav.experience": "Experience",
@@ -34,6 +35,21 @@ export const ui = {
     "stats.rating": "Rating",
     "stats.reviews": "Reviews",
     "section.projects": "Projects",
+    "services.intro":
+      "I build AI tools that fit the way you already work, from identifying repetitive tasks to connecting and monitoring the solution.",
+    "services.contact": "Let’s talk about your project",
+    "services.assessment.title": "Process assessment",
+    "services.assessment.description":
+      "I map repetitive tasks and prioritize what to automate based on effort, risk, and expected time savings.",
+    "services.agents.title": "Custom AI agents",
+    "services.agents.description":
+      "I build agents that answer questions from your documents, classify requests, and hand off sensitive decisions for human review.",
+    "services.integrations.title": "System integrations",
+    "services.integrations.description":
+      "I connect agents to your APIs, databases, and workflows, including processes like electronic invoicing.",
+    "services.monitoring.title": "Monitoring and improvement",
+    "services.monitoring.description":
+      "I set up metrics, activity logs, and alerts so you can spot errors and decide what to improve after launch.",
     "section.skills": "Skills",
     "section.experience": "Experience",
     "section.posts": "Posts",
@@ -57,6 +73,7 @@ export const ui = {
     "meta.ogDescription":
       "AI Engineer y Desarrollador Fullstack Senior con más de 15 años construyendo sistemas escalables, arquitecturas RAG, agentes de IA y APIs REST.",
     "nav.switchTo": "Cambiar a inglés",
+    "nav.services": "Servicios",
     "nav.projects": "Proyectos",
     "nav.skills": "Habilidades",
     "nav.experience": "Experiencia",
@@ -79,6 +96,21 @@ export const ui = {
     "stats.rating": "Calificación",
     "stats.reviews": "Reseñas",
     "section.projects": "Proyectos",
+    "services.intro":
+      "Desarrollo soluciones de IA que se adaptan a tu forma de trabajar, desde detectar tareas repetitivas hasta integrar la solución y medir cómo funciona.",
+    "services.contact": "Hablemos de tu proyecto",
+    "services.assessment.title": "Diagnóstico de procesos",
+    "services.assessment.description":
+      "Identifico tareas repetitivas y priorizo qué automatizar según el esfuerzo, el riesgo y el ahorro de tiempo esperado.",
+    "services.agents.title": "Agentes de IA a medida",
+    "services.agents.description":
+      "Desarrollo agentes que responden preguntas a partir de tus documentos, clasifican solicitudes y derivan decisiones sensibles a una persona.",
+    "services.integrations.title": "Integración de sistemas",
+    "services.integrations.description":
+      "Conecto los agentes a tus APIs, bases de datos y flujos de trabajo, incluyendo procesos como la facturación electrónica.",
+    "services.monitoring.title": "Monitoreo y mejora",
+    "services.monitoring.description":
+      "Configuro métricas, registros de actividad y alertas para detectar errores y decidir qué mejorar después del lanzamiento.",
     "section.skills": "Habilidades",
     "section.experience": "Experiencia",
     "section.posts": "Publicaciones",

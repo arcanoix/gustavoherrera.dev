@@ -38,6 +38,14 @@ const Navbar = ({ lang }: NavbarProps) => {
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
+          <li className="hidden lg:list-item">
+            <a
+              href="#services"
+              className="inline-flex min-h-11 items-center rounded-lg px-3.5 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 focus-visible:outline-violet-500 dark:text-slate-400 dark:hover:text-white"
+            >
+              {t("nav.services")}
+            </a>
+          </li>
           {navLinks.map((link) => (
             <li key={link.href}>
               <a

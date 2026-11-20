@@ -1,0 +1,57 @@
+---
+import { useTranslations } from "@/i18n/utils"
+import type { Lang } from "@/i18n/ui"
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const services = ["assessment", "agents", "integrations", "monitoring"] as const
+---
+
+<section
+  id="services"
+  aria-labelledby="services-heading"
+  class="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28"
+>
+  <div
+    class="grid gap-x-14 gap-y-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
+  >
+    <div>
+      <h2
+        id="services-heading"
+        class="section-heading mb-6 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl"
+      >
+        {t("nav.services")}
+      </h2>
+      <p
+        class="max-w-prose text-lg leading-relaxed text-slate-700 dark:text-slate-300"
+      >
+        {t("services.intro")}
+      </p>
+      <a
+        href="#contact"
+        class="mt-6 inline-flex min-h-12 items-center rounded-xl bg-violet-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-violet-800 focus-visible:outline-violet-500 dark:bg-violet-600 dark:hover:bg-violet-700"
+      >
+        {t("services.contact")}
+      </a>
+    </div>
+
+    <ul class="grid gap-2 rounded-2xl bg-slate-100 p-3 dark:bg-white/5 sm:p-5">
+      {
+        services.map((service) => (
+          <li class="px-3 py-4 sm:px-4">
+            <h3 class="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">
+              {t(`services.${service}.title`)}
+            </h3>
+            <p class="mt-2 leading-relaxed text-slate-700 dark:text-slate-300">
+              {t(`services.${service}.description`)}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
