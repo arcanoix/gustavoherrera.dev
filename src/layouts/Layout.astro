@@ -1,4 +1,5 @@
 ---
+import SpeedInsights from "@vercel/speed-insights/astro"
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro"
 import Navbar from "@/components/Navbar"
 import ConstellationCanvas from "@/components/ConstellationCanvas"
@@ -62,5 +63,6 @@ const canonical = new URL(localePaths[lang], Astro.site)
     <div class="relative z-10">
       <slot />
     </div>
+    <SpeedInsights />
   </body>
 </html>
