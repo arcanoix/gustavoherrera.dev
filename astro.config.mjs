@@ -7,6 +7,7 @@ import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://gustavoherrera.dev",
   integrations: [react(), tailwind({ applyBaseStyles: false })],
   i18n: {
     defaultLocale: "en",

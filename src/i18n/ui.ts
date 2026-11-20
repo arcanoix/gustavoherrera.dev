@@ -5,8 +5,14 @@ export const languages = {
 
 export const defaultLang = "en"
 
+export const localePaths = {
+  en: "/",
+  es: "/es/",
+} as const satisfies Record<Lang, string>
+
 export const ui = {
   en: {
+    "meta.title": "Gustavo Herrera | AI Engineer & Fullstack Developer",
     "meta.description":
       "AI Engineer & Senior Fullstack Developer with 15+ years building scalable web applications, APIs, and AI-powered solutions with Python, RAG, and AI agents. Available for remote work.",
     "meta.ogDescription":
@@ -68,6 +74,7 @@ export const ui = {
     "post.readMore": "Read More",
   },
   es: {
+    "meta.title": "Gustavo Herrera | Ingeniero de IA y Desarrollador Fullstack",
     "meta.description":
       "AI Engineer y Desarrollador Fullstack Senior con más de 15 años construyendo aplicaciones web escalables, APIs y soluciones con IA usando Python, RAG y agentes de IA. Disponible para trabajo remoto.",
     "meta.ogDescription":

@@ -3,7 +3,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics.astro"
 import Navbar from "@/components/Navbar"
 import ConstellationCanvas from "@/components/ConstellationCanvas"
 import { useTranslations } from "@/i18n/utils"
-import { defaultLang, type Lang } from "@/i18n/ui"
+import { defaultLang, localePaths, type Lang } from "@/i18n/ui"
 
 interface Props {
   lang?: Lang
@@ -11,7 +11,8 @@ interface Props {
 
 const { lang = defaultLang } = Astro.props
 const t = useTranslations(lang)
-const base = Astro.site ?? Astro.url.origin
+const title = t("meta.title")
+const canonical = new URL(localePaths[lang], Astro.site)
 ---
 
 <!doctype html>
@@ -21,15 +22,18 @@ const base = Astro.site ?? Astro.url.origin
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/fav.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Gustavo Herrera | AI Engineer</title>
+    <title>{title}</title>
     <meta name="description" content={t("meta.description")} />
-    <meta property="og:title" content="Gustavo Herrera | AI Engineer" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:description" content={t("meta.ogDescription")} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@arcanoix_" />
-    <link rel="alternate" hreflang="en" href={new URL("/", base)} />
-    <link rel="alternate" hreflang="es" href={new URL("/es/", base)} />
-    <link rel="alternate" hreflang="x-default" href={new URL("/", base)} />
+    {Object.entries(localePaths).map(([locale, path]) => (
+      <link rel="alternate" hreflang={locale} href={new URL(path, Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(localePaths[defaultLang], Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
